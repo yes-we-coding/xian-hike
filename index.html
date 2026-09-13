@@ -6,9 +6,9 @@
 <title>西安周末出行指南 · 登山徒步 + 雨天City Walk · 西咸吾悦广场出发</title>
 <style>
   :root{
-    --bg:#0e1116; --panel:#161b22; --panel2:#1c232d; --ink:#e6edf3; --sub:#9aa7b4;
-    --line:#2b333d; --green:#3fb950; --amber:#d29922; --red:#f85149; --blue:#58a6ff;
-    --orange:#ff7a45; --teal:#39c5cf; --purple:#bc8cff;
+    --bg:#f6f7f9; --panel:#ffffff; --panel2:#eef1f5; --ink:#1f2328; --sub:#5f6b76;
+    --line:#d8dde3; --green:#1a7f37; --amber:#9a6700; --red:#cf222e; --blue:#0969da;
+    --orange:#bc401d; --teal:#0e7490; --purple:#8250df;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -17,7 +17,7 @@
   a{color:var(--blue);text-decoration:none}
   .layout{display:flex;max-width:1280px;margin:0 auto}
   nav{position:sticky;top:0;align-self:flex-start;width:230px;height:100vh;overflow-y:auto;
-    padding:26px 14px 40px 26px;border-right:1px solid var(--line);flex:none}
+    padding:26px 14px 40px 26px;border-right:1px solid var(--line);flex:none;background:#fbfcfd}
   nav h2{font-size:13px;color:var(--sub);letter-spacing:2px;margin:18px 0 8px}
   nav a{display:block;color:var(--sub);padding:5px 10px;border-radius:7px;font-size:13.5px}
   nav a:hover{background:var(--panel2);color:var(--ink)}
@@ -25,30 +25,32 @@
   h1{font-size:31px;line-height:1.3;margin:0 0 6px}
   h2{font-size:24px;margin:56px 0 14px;padding-top:18px;border-top:1px solid var(--line)}
   h3{font-size:18px;margin:30px 0 8px;color:var(--teal)}
-  h4{font-size:15.5px;margin:20px 0 6px;color:var(--amber)}
-  p{margin:9px 0;color:#cdd7e1}
+  h4{font-size:15.5px;margin:20px 0 6px;color:#b45309}
+  p{margin:9px 0;color:#3d4650}
   .lead{color:var(--sub);font-size:15.5px}
   .tag{display:inline-block;font-size:12px;padding:1px 9px;border-radius:20px;margin-right:6px;
     border:1px solid var(--line);color:var(--sub)}
-  .tag.easy{color:var(--green);border-color:#234c2e;background:#10230f}
-  .tag.mid{color:var(--amber);border-color:#4d3a12;background:#241b0a}
-  .tag.hard{color:var(--red);border-color:#55201e;background:#2a1210}
-  .tag.pt{color:var(--blue);border-color:#1c3a5c;background:#0c1a2a}
+  .tag.easy{color:var(--green);border-color:#bfe3c8;background:#ecf7ef}
+  .tag.mid{color:var(--amber);border-color:#e8d6a8;background:#fbf5e6}
+  .tag.hard{color:var(--red);border-color:#f0c2c6;background:#fdecee}
+  .tag.pt{color:var(--blue);border-color:#bcd6f0;background:#eef5fd}
   table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.8px}
   th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
   th{background:var(--panel2);color:var(--ink);font-weight:600;white-space:nowrap}
-  tr:nth-child(even) td{background:#131820}
-  code{background:#0a0d12;border:1px solid var(--line);border-radius:5px;padding:1px 6px;
-    font-family:Cascadia Code,Consolas,monospace;font-size:12.8px;color:#a5d6ff}
-  .box{border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0;background:var(--panel)}
-  .box.warn{border-color:#5c4314;background:#1f1808}
-  .box.ok{border-color:#234c2e;background:#0f1d10}
-  .box.route{border-color:#1c3a5c;background:#0c1723}
+  tr:nth-child(even) td{background:#f6f8fa}
+  code{background:#eef1f4;border:1px solid var(--line);border-radius:5px;padding:1px 6px;
+    font-family:Cascadia Code,Consolas,monospace;font-size:12.8px;color:#0b5cad}
+  .box{border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0;background:var(--panel);
+    box-shadow:0 1px 3px rgba(31,35,40,.06)}
+  .box.warn{border-color:#e0c389;background:#fdf8ec}
+  .box.ok{border-color:#a9d6b6;background:#eff8f1}
+  .box.route{border-color:#a8ccee;background:#eef5fd}
   .box .t{font-weight:700;margin-bottom:6px}
   .warn .t{color:var(--amber)} .ok .t{color:var(--green)} .route .t{color:var(--blue)}
   .cap{color:var(--sub);font-size:12.5px;text-align:center;margin:4px 0 0}
-  .svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 8px 6px;margin:18px 0}
-  ul,ol{padding-left:22px} li{margin:4px 0;color:#cdd7e1}
+  .svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 8px 6px;margin:18px 0;
+    box-shadow:0 1px 3px rgba(31,35,40,.06)}
+  ul,ol{padding-left:22px} li{margin:4px 0;color:#3d4650}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:14px 0}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
   .card h4{margin-top:0}
@@ -58,9 +60,9 @@
   .step .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--panel2);
     border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
     font-size:13px;color:var(--teal);font-weight:700}
-  .ck{font-size:13.5px;color:#cdd7e1;display:block;padding:3px 0;cursor:pointer}
-  .ck input{margin-right:7px;accent-color:#39c5cf}
-  .ck input:checked + *,.ck:has(input:checked){color:#66727f;text-decoration:line-through}
+  .ck{font-size:13.5px;color:#3d4650;display:block;padding:3px 0;cursor:pointer}
+  .ck input{margin-right:7px;accent-color:#0e7490}
+  .ck input:checked + *,.ck:has(input:checked){color:#9aa4ad;text-decoration:line-through}
   hr{border:none;border-top:1px solid var(--line);margin:34px 0}
   .small{font-size:12.8px;color:var(--sub)}
   .hl{color:var(--amber);font-weight:600}
@@ -120,21 +122,21 @@
       <path d="M0,0 L7,3 L0,6 Z" fill="#3fb950"/>
     </marker>
   </defs>
-  <rect x="20" y="120" width="150" height="64" rx="9" fill="#1c232d" stroke="#58a6ff"/>
-  <text x="95" y="148" fill="#e6edf3" font-size="14" text-anchor="middle" font-weight="700">西咸吾悦广场</text>
-  <text x="95" y="168" fill="#9aa7b4" font-size="11.5" text-anchor="middle">沣东新城 · 城西</text>
+  <rect x="20" y="120" width="150" height="64" rx="9" fill="#eef5fd" stroke="#0969da"/>
+  <text x="95" y="148" fill="#1f2328" font-size="14" text-anchor="middle" font-weight="700">西咸吾悦广场</text>
+  <text x="95" y="168" fill="#5f6b76" font-size="11.5" text-anchor="middle">沣东新城 · 城西</text>
 
-  <rect x="250" y="120" width="170" height="64" rx="9" fill="#1c232d" stroke="#58a6ff"/>
+  <rect x="250" y="120" width="170" height="64" rx="9" fill="#eef5fd" stroke="#0969da"/>
   <text x="335" y="146" fill="#58a6ff" font-size="13" text-anchor="middle">地铁 5 号线（东西向）</text>
-  <text x="335" y="166" fill="#9aa7b4" font-size="11.5" text-anchor="middle">阿房宫南 → 南稍门</text>
+  <text x="335" y="166" fill="#5f6b76" font-size="11.5" text-anchor="middle">阿房宫南 → 南稍门</text>
 
-  <rect x="490" y="120" width="150" height="64" rx="9" fill="#1c232d" stroke="#39c5cf"/>
+  <rect x="490" y="120" width="150" height="64" rx="9" fill="#e6f4f7" stroke="#0e7490"/>
   <text x="565" y="146" fill="#39c5cf" font-size="13" text-anchor="middle">南稍门 换 2 号线</text>
-  <text x="565" y="166" fill="#9aa7b4" font-size="11.5" text-anchor="middle">一路向南</text>
+  <text x="565" y="166" fill="#5f6b76" font-size="11.5" text-anchor="middle">一路向南</text>
 
-  <rect x="690" y="120" width="150" height="64" rx="9" fill="#1c232d" stroke="#3fb950"/>
+  <rect x="690" y="120" width="150" height="64" rx="9" fill="#ecf7ef" stroke="#1a7f37"/>
   <text x="765" y="146" fill="#3fb950" font-size="13" text-anchor="middle" font-weight="700">韦曲南</text>
-  <text x="765" y="166" fill="#9aa7b4" font-size="11.5" text-anchor="middle">进山公交集散点</text>
+  <text x="765" y="166" fill="#5f6b76" font-size="11.5" text-anchor="middle">进山公交集散点</text>
 
   <line x1="170" y1="152" x2="246" y2="152" stroke="#58a6ff" stroke-width="2" marker-end="url(#arr)"/>
   <line x1="420" y1="152" x2="486" y2="152" stroke="#58a6ff" stroke-width="2" marker-end="url(#arr)"/>
@@ -142,15 +144,15 @@
 
   <!-- branches south -->
   <line x1="765" y1="184" x2="765" y2="230" stroke="#3fb950" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrg)"/>
-  <rect x="620" y="232" width="290" height="150" rx="9" fill="#10230f" stroke="#2c5e37"/>
+  <rect x="620" y="232" width="290" height="150" rx="9" fill="#ecf7ef" stroke="#1a7f37"/>
   <text x="765" y="256" fill="#3fb950" font-size="13" text-anchor="middle" font-weight="700">从韦曲南分流</text>
-  <text x="640" y="280" fill="#cdd7e1" font-size="12.5">· 335 路 → 太乙宫 → 翠华山 / 南五台</text>
-  <text x="640" line-height="1.6" y="304" fill="#cdd7e1" font-size="12.5">· 环山旅游专线（周末）→ 子午峪/沣峪口</text>
-  <text x="640" y="328" fill="#cdd7e1" font-size="12.5">· 拼车/黑车 → 嘉午台、小五台峪口</text>
-  <text x="640" y="352" fill="#cdd7e1" font-size="12.5">· 户外团大巴 → 圭峰、太平、冰晶顶</text>
+  <text x="640" y="280" fill="#3d4650" font-size="12.5">· 335 路 → 太乙宫 → 翠华山 / 南五台</text>
+  <text x="640" line-height="1.6" y="304" fill="#3d4650" font-size="12.5">· 环山旅游专线（周末）→ 子午峪/沣峪口</text>
+  <text x="640" y="328" fill="#3d4650" font-size="12.5">· 拼车/黑车 → 嘉午台、小五台峪口</text>
+  <text x="640" y="352" fill="#3d4650" font-size="12.5">· 户外团大巴 → 圭峰、太平、冰晶顶</text>
 
-  <text x="170" y="215" fill="#9aa7b4" font-size="11">另一条：5号线→纺织城换9号线→骊山（临潼）</text>
-  <text x="170" y="236" fill="#9aa7b4" font-size="11">远途：地铁→西安北站，高铁30分钟→华山北</text>
+  <text x="170" y="215" fill="#5f6b76" font-size="11">另一条：5号线→纺织城换9号线→骊山（临潼）</text>
+  <text x="170" y="236" fill="#5f6b76" font-size="11">远途：地铁→西安北站，高铁30分钟→华山北</text>
 </svg>
 <div class="cap">图 1 · 西咸吾悦广场进山的公共交通主干：5号线进城、南稍门换2号线、韦曲南分流进山</div>
 </div>
@@ -158,28 +160,28 @@
 <h2 id="map">各山距离 × 难度地图</h2>
 <div class="svgwrap">
 <svg viewBox="0 0 860 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,Microsoft YaHei,sans-serif">
-  <line x1="80" y1="370" x2="810" y2="370" stroke="#2b333d" stroke-width="1.5"/>
-  <line x1="80" y1="40" x2="80" y2="370" stroke="#2b333d" stroke-width="1.5"/>
-  <text x="780" y="392" fill="#9aa7b4" font-size="12">离市区距离 →</text>
-  <text x="40" y="55" fill="#9aa7b4" font-size="12" transform="rotate(-90 40 55)">徒步强度 →</text>
-  <text x="90" y="60" fill="#66727f" font-size="11">进阶</text>
-  <text x="90" y="360" fill="#66727f" font-size="11">轻松</text>
+  <line x1="80" y1="370" x2="810" y2="370" stroke="#c4ccd4" stroke-width="1.5"/>
+  <line x1="80" y1="40" x2="80" y2="370" stroke="#c4ccd4" stroke-width="1.5"/>
+  <text x="780" y="392" fill="#5f6b76" font-size="12">离市区距离 →</text>
+  <text x="40" y="55" fill="#5f6b76" font-size="12" transform="rotate(-90 40 55)">徒步强度 →</text>
+  <text x="90" y="60" fill="#9aa4ad" font-size="11">进阶</text>
+  <text x="90" y="360" fill="#9aa4ad" font-size="11">轻松</text>
   <!-- grid zones -->
-  <rect x="80" y="230" width="365" height="140" fill="#10230f" opacity="0.5"/>
-  <text x="95" y="250" fill="#2c5e37" font-size="11">近 + 轻松（无车友好区）</text>
+  <rect x="80" y="230" width="365" height="140" fill="#1a7f37" opacity="0.07"/>
+  <text x="95" y="250" fill="#1a7f37" font-size="11">近 + 轻松（无车友好区）</text>
 
   <!-- points: x scaled 25km~150 ... 130km~780 -->
   <g font-size="12.5">
-    <circle cx="200" cy="300" r="8" fill="#3fb950"/><text x="214" y="296" fill="#e6edf3">翠华山</text><text x="214" y="312" fill="#9aa7b4" font-size="11">~30km · 3-5h</text>
-    <circle cx="200" cy="262" r="8" fill="#3fb950"/><text x="214" y="258" fill="#e6edf3">南五台</text><text x="214" y="274" fill="#9aa7b4" font-size="11">~30km · 2-4h</text>
-    <circle cx="232" cy="232" r="8" fill="#3fb950"/><text x="246" y="228" fill="#e6edf3">子午峪小五台</text><text x="246" y="244" fill="#9aa7b4" font-size="11">~35km · 3h · 免费</text>
-    <circle cx="248" cy="345" r="8" fill="#58a6ff"/><text x="262" y="341" fill="#e6edf3">骊山</text><text x="262" y="357" fill="#9aa7b4" font-size="11">~35km · 2h · 地铁直达</text>
-    <circle cx="272" cy="180" r="8" fill="#d29922"/><text x="286" y="176" fill="#e6edf3">嘉午台</text><text x="286" y="192" fill="#9aa7b4" font-size="11">~40km · 4-6h · 野</text>
-    <circle cx="360" cy="205" r="8" fill="#d29922"/><text x="374" y="201" fill="#e6edf3">圭峰山</text><text x="374" y="217" fill="#9aa7b4" font-size="11">~55km · 红叶顶级</text>
-    <circle cx="430" cy="225" r="8" fill="#d29922"/><text x="444" y="221" fill="#e6edf3">太平森林公园</text><text x="444" y="237" fill="#9aa7b4" font-size="11">~65km · 瀑布</text>
-    <circle cx="540" cy="110" r="8" fill="#f85149"/><text x="554" y="106" fill="#e6edf3">冰晶顶 3015m</text><text x="554" y="122" fill="#9aa7b4" font-size="11">~80km · 6-8h</text>
-    <circle cx="640" cy="330" r="8" fill="#bc8cff"/><text x="654" y="326" fill="#e6edf3">华山</text><text x="654" y="342" fill="#9aa7b4" font-size="11">~120km · 高铁30min</text>
-    <circle cx="690" cy="80" r="8" fill="#f85149"/><text x="704" y="76" fill="#e6edf3">太白山 3771m</text><text x="704" y="92" fill="#9aa7b4" font-size="11">~130km · 两天</text>
+    <circle cx="200" cy="300" r="8" fill="#3fb950"/><text x="214" y="296" fill="#1f2328">翠华山</text><text x="214" y="312" fill="#5f6b76" font-size="11">~30km · 3-5h</text>
+    <circle cx="200" cy="262" r="8" fill="#3fb950"/><text x="214" y="258" fill="#1f2328">南五台</text><text x="214" y="274" fill="#5f6b76" font-size="11">~30km · 2-4h</text>
+    <circle cx="232" cy="232" r="8" fill="#3fb950"/><text x="246" y="228" fill="#1f2328">子午峪小五台</text><text x="246" y="244" fill="#5f6b76" font-size="11">~35km · 3h · 免费</text>
+    <circle cx="248" cy="345" r="8" fill="#58a6ff"/><text x="262" y="341" fill="#1f2328">骊山</text><text x="262" y="357" fill="#5f6b76" font-size="11">~35km · 2h · 地铁直达</text>
+    <circle cx="272" cy="180" r="8" fill="#d29922"/><text x="286" y="176" fill="#1f2328">嘉午台</text><text x="286" y="192" fill="#5f6b76" font-size="11">~40km · 4-6h · 野</text>
+    <circle cx="360" cy="205" r="8" fill="#d29922"/><text x="374" y="201" fill="#1f2328">圭峰山</text><text x="374" y="217" fill="#5f6b76" font-size="11">~55km · 红叶顶级</text>
+    <circle cx="430" cy="225" r="8" fill="#d29922"/><text x="444" y="221" fill="#1f2328">太平森林公园</text><text x="444" y="237" fill="#5f6b76" font-size="11">~65km · 瀑布</text>
+    <circle cx="540" cy="110" r="8" fill="#f85149"/><text x="554" y="106" fill="#1f2328">冰晶顶 3015m</text><text x="554" y="122" fill="#5f6b76" font-size="11">~80km · 6-8h</text>
+    <circle cx="640" cy="330" r="8" fill="#bc8cff"/><text x="654" y="326" fill="#1f2328">华山</text><text x="654" y="342" fill="#5f6b76" font-size="11">~120km · 高铁30min</text>
+    <circle cx="690" cy="80" r="8" fill="#f85149"/><text x="704" y="76" fill="#1f2328">太白山 3771m</text><text x="704" y="92" fill="#5f6b76" font-size="11">~130km · 两天</text>
   </g>
 </svg>
 <div class="cap">图 2 · 横轴为离市区距离，纵轴为徒步强度。左下绿色区是无车新手最划算的选择</div>
@@ -320,51 +322,51 @@
 <h2 id="decide">一分钟选山决策树</h2>
 <div class="svgwrap">
 <svg viewBox="0 0 860 430" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,Microsoft YaHei,sans-serif">
-  <rect x="330" y="14" width="200" height="46" rx="9" fill="#1c232d" stroke="#39c5cf"/>
+  <rect x="330" y="14" width="200" height="46" rx="9" fill="#e6f4f7" stroke="#0e7490"/>
   <text x="430" y="43" fill="#39c5cf" font-size="13.5" text-anchor="middle">今天想走哪种？</text>
 
-  <line x1="380" y1="60" x2="180" y2="96" stroke="#2b333d"/>
-  <line x1="430" y1="60" x2="430" y2="96" stroke="#2b333d"/>
-  <line x1="480" y1="60" x2="690" y2="96" stroke="#2b333d"/>
+  <line x1="380" y1="60" x2="180" y2="96" stroke="#c4ccd4"/>
+  <line x1="430" y1="60" x2="430" y2="96" stroke="#c4ccd4"/>
+  <line x1="480" y1="60" x2="690" y2="96" stroke="#c4ccd4"/>
 
-  <rect x="70" y="98" width="220" height="44" rx="8" fill="#10230f" stroke="#2c5e37"/>
+  <rect x="70" y="98" width="220" height="44" rx="8" fill="#ecf7ef" stroke="#1a7f37"/>
   <text x="180" y="125" fill="#3fb950" font-size="12.5" text-anchor="middle">省心，全程公交</text>
-  <rect x="320" y="98" width="220" height="44" rx="8" fill="#241b0a" stroke="#4d3a12"/>
+  <rect x="320" y="98" width="220" height="44" rx="8" fill="#fbf5e6" stroke="#9a6700"/>
   <text x="430" y="125" fill="#d29922" font-size="12.5" text-anchor="middle">野趣，愿拼车/跟团</text>
-  <rect x="580" y="98" width="220" height="44" rx="8" fill="#18133a" stroke="#4a3a8c"/>
+  <rect x="580" y="98" width="220" height="44" rx="8" fill="#f3edfd" stroke="#8250df"/>
   <text x="690" y="125" fill="#bc8cff" font-size="12.5" text-anchor="middle">出远门，一整天以上</text>
 
-  <line x1="180" y1="142" x2="180" y2="172" stroke="#2b333d"/>
-  <rect x="60" y="174" width="240" height="70" rx="8" fill="#1c232d" stroke="#2b333d"/>
-  <text x="180" y="200" fill="#e6edf3" font-size="12.5" text-anchor="middle">带家人/体力一般 →</text>
+  <line x1="180" y1="142" x2="180" y2="172" stroke="#c4ccd4"/>
+  <rect x="60" y="174" width="240" height="70" rx="8" fill="#ffffff" stroke="#d8dde3"/>
+  <text x="180" y="200" fill="#1f2328" font-size="12.5" text-anchor="middle">带家人/体力一般 →</text>
   <text x="180" y="222" fill="#3fb950" font-size="13" text-anchor="middle" font-weight="700">翠华山 或 南五台</text>
 
-  <rect x="60" y="262" width="240" height="62" rx="8" fill="#1c232d" stroke="#2b333d"/>
-  <text x="180" y="288" fill="#e6edf3" font-size="12.5" text-anchor="middle">只想随便走走 →</text>
+  <rect x="60" y="262" width="240" height="62" rx="8" fill="#ffffff" stroke="#d8dde3"/>
+  <text x="180" y="288" fill="#1f2328" font-size="12.5" text-anchor="middle">只想随便走走 →</text>
   <text x="180" y="309" fill="#58a6ff" font-size="13" text-anchor="middle" font-weight="700">骊山（地铁直达）</text>
-  <line x1="180" y1="244" x2="180" y2="262" stroke="#2b333d"/>
+  <line x1="180" y1="244" x2="180" y2="262" stroke="#c4ccd4"/>
 
-  <line x1="430" y1="142" x2="430" y2="172" stroke="#2b333d"/>
-  <rect x="310" y="174" width="240" height="62" rx="8" fill="#1c232d" stroke="#2b333d"/>
-  <text x="430" y="200" fill="#e6edf3" font-size="12.5" text-anchor="middle">9月想挑战 →</text>
+  <line x1="430" y1="142" x2="430" y2="172" stroke="#c4ccd4"/>
+  <rect x="310" y="174" width="240" height="62" rx="8" fill="#ffffff" stroke="#d8dde3"/>
+  <text x="430" y="200" fill="#1f2328" font-size="12.5" text-anchor="middle">9月想挑战 →</text>
   <text x="430" y="221" fill="#d29922" font-size="13" text-anchor="middle" font-weight="700">嘉午台（拼车/团）</text>
 
-  <rect x="310" y="262" width="240" height="62" rx="8" fill="#1c232d" stroke="#2b333d"/>
-  <text x="430" y="288" fill="#e6edf3" font-size="12.5" text-anchor="middle">10月底红叶 →</text>
+  <rect x="310" y="262" width="240" height="62" rx="8" fill="#ffffff" stroke="#d8dde3"/>
+  <text x="430" y="288" fill="#1f2328" font-size="12.5" text-anchor="middle">10月底红叶 →</text>
   <text x="430" y="309" fill="#d29922" font-size="13" text-anchor="middle" font-weight="700">圭峰山（户外团）</text>
-  <line x1="430" y1="236" x2="430" y2="262" stroke="#2b333d"/>
+  <line x1="430" y1="236" x2="430" y2="262" stroke="#c4ccd4"/>
 
-  <line x1="690" y1="142" x2="690" y2="172" stroke="#2b333d"/>
-  <rect x="570" y="174" width="240" height="62" rx="8" fill="#1c232d" stroke="#2b333d"/>
-  <text x="690" y="200" fill="#e6edf3" font-size="12.5" text-anchor="middle">当天来回 →</text>
+  <line x1="690" y1="142" x2="690" y2="172" stroke="#c4ccd4"/>
+  <rect x="570" y="174" width="240" height="62" rx="8" fill="#ffffff" stroke="#d8dde3"/>
+  <text x="690" y="200" fill="#1f2328" font-size="12.5" text-anchor="middle">当天来回 →</text>
   <text x="690" y="221" fill="#bc8cff" font-size="13" text-anchor="middle" font-weight="700">华山（高铁30min）</text>
 
-  <rect x="570" y="262" width="240" height="62" rx="8" fill="#2a1210" stroke="#55201e"/>
-  <text x="690" y="288" fill="#e6edf3" font-size="12.5" text-anchor="middle">有装备、两天 →</text>
+  <rect x="570" y="262" width="240" height="62" rx="8" fill="#fdecee" stroke="#cf222e"/>
+  <text x="690" y="288" fill="#1f2328" font-size="12.5" text-anchor="middle">有装备、两天 →</text>
   <text x="690" y="309" fill="#f85149" font-size="13" text-anchor="middle" font-weight="700">太白山 3771m</text>
-  <line x1="690" y1="236" x2="690" y2="262" stroke="#2b333d"/>
+  <line x1="690" y1="236" x2="690" y2="262" stroke="#c4ccd4"/>
 
-  <text x="430" y="380" fill="#9aa7b4" font-size="12.5" text-anchor="middle">新手默认答案：本周翠华山 · 10月底圭峰山 · 想出远门选华山</text>
+  <text x="430" y="380" fill="#5f6b76" font-size="12.5" text-anchor="middle">新手默认答案：本周翠华山 · 10月底圭峰山 · 想出远门选华山</text>
 </svg>
 <div class="cap">图 3 · 选山决策树</div>
 </div>
@@ -419,23 +421,23 @@
 
 <div class="svgwrap">
 <svg viewBox="0 0 860 250" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,Microsoft YaHei,sans-serif">
-  <rect x="30" y="30" width="800" height="52" rx="10" fill="#1c232d" stroke="#39c5cf"/>
+  <rect x="30" y="30" width="800" height="52" rx="10" fill="#e6f4f7" stroke="#0e7490"/>
   <text x="430" y="62" fill="#39c5cf" font-size="15" text-anchor="middle" font-weight="700">先看天气预报：周末到底晴不晴？</text>
 
-  <line x1="250" y1="82" x2="180" y2="118" stroke="#2b333d"/>
-  <line x1="610" y1="82" x2="680" y2="118" stroke="#2b333d"/>
-  <rect x="60" y="120" width="240" height="46" rx="9" fill="#10230f" stroke="#2c5e37"/>
+  <line x1="250" y1="82" x2="180" y2="118" stroke="#c4ccd4"/>
+  <line x1="610" y1="82" x2="680" y2="118" stroke="#c4ccd4"/>
+  <rect x="60" y="120" width="240" height="46" rx="9" fill="#ecf7ef" stroke="#1a7f37"/>
   <text x="180" y="149" fill="#3fb950" font-size="14" text-anchor="middle">晴 / 多云 → 进山</text>
   <rect x="560" y="120" width="240" height="46" rx="9" fill="#0c1a2a" stroke="#1c3a5c"/>
   <text x="680" y="149" fill="#58a6ff" font-size="14" text-anchor="middle">有雨 → 市区 City Walk</text>
 
-  <line x1="180" y1="166" x2="180" y2="190" stroke="#2b333d"/>
-  <text x="180" y="212" fill="#9aa7b4" font-size="12" text-anchor="middle">新手：翠华山 / 南五台（台阶）</text>
-  <text x="180" y="232" fill="#9aa7b4" font-size="12" text-anchor="middle">跟团：嘉午台 / 圭峰山</text>
+  <line x1="180" y1="166" x2="180" y2="190" stroke="#c4ccd4"/>
+  <text x="180" y="212" fill="#5f6b76" font-size="12" text-anchor="middle">新手：翠华山 / 南五台（台阶）</text>
+  <text x="180" y="232" fill="#5f6b76" font-size="12" text-anchor="middle">跟团：嘉午台 / 圭峰山</text>
 
-  <line x1="680" y1="166" x2="680" y2="190" stroke="#2b333d"/>
-  <text x="680" y="212" fill="#9aa7b4" font-size="12" text-anchor="middle">大雨：大唐西市/陕历博（纯室内）</text>
-  <text x="680" y="232" fill="#9aa7b4" font-size="12" text-anchor="middle">小雨：不夜城/书院门/寺院</text>
+  <line x1="680" y1="166" x2="680" y2="190" stroke="#c4ccd4"/>
+  <text x="680" y="212" fill="#5f6b76" font-size="12" text-anchor="middle">大雨：大唐西市/陕历博（纯室内）</text>
+  <text x="680" y="232" fill="#5f6b76" font-size="12" text-anchor="middle">小雨：不夜城/书院门/寺院</text>
 </svg>
 <div class="cap">图 4 · 晴雨两套方案，按当天天气二选一</div>
 </div>
