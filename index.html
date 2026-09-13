@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>西安近郊徒步登山指南 · 西咸吾悦广场出发 · 公共交通版</title>
+<style>
+  :root{
+    --bg:#0e1116; --panel:#161b22; --panel2:#1c232d; --ink:#e6edf3; --sub:#9aa7b4;
+    --line:#2b333d; --green:#3fb950; --amber:#d29922; --red:#f85149; --blue:#58a6ff;
+    --orange:#ff7a45; --teal:#39c5cf; --purple:#bc8cff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.75;font-size:15px}
+  a{color:var(--blue);text-decoration:none}
+  .layout{display:flex;max-width:1280px;margin:0 auto}
+  nav{position:sticky;top:0;align-self:flex-start;width:230px;height:100vh;overflow-y:auto;
+    padding:26px 14px 40px 26px;border-right:1px solid var(--line);flex:none}
+  nav h2{font-size:13px;color:var(--sub);letter-spacing:2px;margin:18px 0 8px}
+  nav a{display:block;color:var(--sub);padding:5px 10px;border-radius:7px;font-size:13.5px}
+  nav a:hover{background:var(--panel2);color:var(--ink)}
+  main{flex:1;min-width:0;padding:38px 54px 120px;max-width:1000px}
+  h1{font-size:31px;line-height:1.3;margin:0 0 6px}
+  h2{font-size:24px;margin:56px 0 14px;padding-top:18px;border-top:1px solid var(--line)}
+  h3{font-size:18px;margin:30px 0 8px;color:var(--teal)}
+  h4{font-size:15.5px;margin:20px 0 6px;color:var(--amber)}
+  p{margin:9px 0;color:#cdd7e1}
+  .lead{color:var(--sub);font-size:15.5px}
+  .tag{display:inline-block;font-size:12px;padding:1px 9px;border-radius:20px;margin-right:6px;
+    border:1px solid var(--line);color:var(--sub)}
+  .tag.easy{color:var(--green);border-color:#234c2e;background:#10230f}
+  .tag.mid{color:var(--amber);border-color:#4d3a12;background:#241b0a}
+  .tag.hard{color:var(--red);border-color:#55201e;background:#2a1210}
+  .tag.pt{color:var(--blue);border-color:#1c3a5c;background:#0c1a2a}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.8px}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+  th{background:var(--panel2);color:var(--ink);font-weight:600;white-space:nowrap}
+  tr:nth-child(even) td{background:#131820}
+  code{background:#0a0d12;border:1px solid var(--line);border-radius:5px;padding:1px 6px;
+    font-family:Cascadia Code,Consolas,monospace;font-size:12.8px;color:#a5d6ff}
+  .box{border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0;background:var(--panel)}
+  .box.warn{border-color:#5c4314;background:#1f1808}
+  .box.ok{border-color:#234c2e;background:#0f1d10}
+  .box.route{border-color:#1c3a5c;background:#0c1723}
+  .box .t{font-weight:700;margin-bottom:6px}
+  .warn .t{color:var(--amber)} .ok .t{color:var(--green)} .route .t{color:var(--blue)}
+  .cap{color:var(--sub);font-size:12.5px;text-align:center;margin:4px 0 0}
+  .svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 8px 6px;margin:18px 0}
+  ul,ol{padding-left:22px} li{margin:4px 0;color:#cdd7e1}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:14px 0}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+  .card h4{margin-top:0}
+  .kpi{font-size:13px;color:var(--sub)}
+  .kpi b{color:var(--ink)}
+  .step{display:flex;gap:12px;margin:10px 0;align-items:flex-start}
+  .step .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--panel2);
+    border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+    font-size:13px;color:var(--teal);font-weight:700}
+  .ck{font-size:13.5px;color:#cdd7e1;display:block;padding:3px 0;cursor:pointer}
+  .ck input{margin-right:7px;accent-color:#39c5cf}
+  .ck input:checked + *,.ck:has(input:checked){color:#66727f;text-decoration:line-through}
+  hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+  .small{font-size:12.8px;color:var(--sub)}
+  .hl{color:var(--amber);font-weight:600}
+  .gl{color:var(--green);font-weight:600}
+  .bl{color:var(--blue);font-weight:600}
+  @media(max-width:900px){nav{display:none}main{padding:24px 18px 80px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav>
+  <h2>总览</h2>
+  <a href="#start">出发点与结论</a>
+  <a href="#map">距离难度地图</a>
+  <a href="#backbone">公共交通主干</a>
+  <h2>逐山方案</h2>
+  <a href="#cuihua">翠华山 · 首选</a>
+  <a href="#nanwutai">南五台</a>
+  <a href="#ziwu">子午峪小五台</a>
+  <a href="#jiawu">嘉午台</a>
+  <a href="#gui">圭峰山</a>
+  <a href="#taiping">太平森林公园</a>
+  <a href="#lishan">骊山</a>
+  <a href="#huashan">华山</a>
+  <h2>实操</h2>
+  <a href="#itinerary">一日时间表</a>
+  <a href="#groups">户外团大巴</a>
+  <a href="#gear">装备清单</a>
+  <a href="#safe">安全与季节</a>
+  <a href="#checklist">行前清单</a>
+  <a href="#decide">选山决策树</a>
+</nav>
+<main>
+
+<h1>西安近郊徒步登山指南</h1>
+<p class="lead">出发点：西咸吾悦广场（沣东新城） · 主题：<b>无车 / 公共交通可达</b> 的秦岭徒步 · 适合季节：9月中—11月初（当下正是最佳窗口）</p>
+<p>
+<span class="tag easy">入门</span><span class="tag mid">中等</span><span class="tag hard">进阶</span><span class="tag pt">地铁+公交</span>
+</p>
+
+<div class="box ok">
+<div class="t">一句话结论</div>
+<p style="margin:4px 0">无车、第一次去，直接选 <b>翠华山</b>（地铁2号线到底 + 335路，西安周边公交成熟度最高）；想爬免费野山或看更好的风景，别和郊县公交较劲，用「<b>韦曲南拼车</b>」或「<b>户外团往返大巴（AA 约40–60元）</b>」解决最后十公里；想出远门就坐 30 分钟高铁去 <b>华山</b>。</p>
+</div>
+
+<h2 id="start">出发点与路线总逻辑</h2>
+<p>西咸吾悦广场位于城西沣东新城，而所有秦岭进山点都在城南山脚下（长安区—鄠邑—渭南方向）。因此无论去哪座山，公共交通的大结构都一样：<b>先进城、再南下</b>。</p>
+
+<div class="svgwrap">
+<svg viewBox="0 80 860 330" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,Microsoft YaHei,sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrg" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#3fb950"/>
+    </marker>
+  </defs>
+  <rect x="20" y="120" width="150" height="64" rx="9" fill="#1c232d" stroke="#58a6ff"/>
+  <text x="95" y="148" fill="#e6edf3" font-size="14" text-anchor="middle" font-weight="700">西咸吾悦广场</text>
+  <text x="95" y="168" fill="#9aa7b4" font-size="11.5" text-anchor="middle">沣东新城 · 城西</text>
+
+  <rect x="250" y="120" width="170" height="64" rx="9" fill="#1c232d" stroke="#58a6ff"/>
+  <text x="335" y="146" fill="#58a6ff" font-size="13" text-anchor="middle">地铁 5 号线（东西向）</text>
+  <text x="335" y="166" fill="#9aa7b4" font-size="11.5" text-anchor="middle">阿房宫南 → 南稍门</text>
+
+  <rect x="490" y="120" width="150" height="64" rx="9" fill="#1c232d" stroke="#39c5cf"/>
+  <text x="565" y="146" fill="#39c5cf" font-size="13" text-anchor="middle">南稍门 换 2 号线</text>
+  <text x="565" y="166" fill="#9aa7b4" font-size="11.5" text-anchor="middle">一路向南</text>
+
+  <rect x="690" y="120" width="150" height="64" rx="9" fill="#1c232d" stroke="#3fb950"/>
+  <text x="765" y="146" fill="#3fb950" font-size="13" text-anchor="middle" font-weight="700">韦曲南</text>
+  <text x="765" y="166" fill="#9aa7b4" font-size="11.5" text-anchor="middle">进山公交集散点</text>
+
+  <line x1="170" y1="152" x2="246" y2="152" stroke="#58a6ff" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="420" y1="152" x2="486" y2="152" stroke="#58a6ff" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="640" y1="152" x2="686" y2="152" stroke="#39c5cf" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- branches south -->
+  <line x1="765" y1="184" x2="765" y2="230" stroke="#3fb950" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrg)"/>
+  <rect x="620" y="232" width="290" height="150" rx="9" fill="#10230f" stroke="#2c5e37"/>
+  <text x="765" y="256" fill="#3fb950" font-size="13" text-anchor="middle" font-weight="700">从韦曲南分流</text>
+  <text x="640" y="280" fill="#cdd7e1" font-size="12.5">· 335 路 → 太乙宫 → 翠华山 / 南五台</text>
+  <text x="640" line-height="1.6" y="304" fill="#cdd7e1" font-size="12.5">· 环山旅游专线（周末）→ 子午峪/沣峪口</text>
+  <text x="640" y="328" fill="#cdd7e1" font-size="12.5">· 拼车/黑车 → 嘉午台、小五台峪口</text>
+  <text x="640" y="352" fill="#cdd7e1" font-size="12.5">· 户外团大巴 → 圭峰、太平、冰晶顶</text>
+
+  <text x="170" y="215" fill="#9aa7b4" font-size="11">另一条：5号线→纺织城换9号线→骊山（临潼）</text>
+  <text x="170" y="236" fill="#9aa7b4" font-size="11">远途：地铁→西安北站，高铁30分钟→华山北</text>
+</svg>
+<div class="cap">图 1 · 西咸吾悦广场进山的公共交通主干：5号线进城、南稍门换2号线、韦曲南分流进山</div>
+</div>
+
+<h2 id="map">各山距离 × 难度地图</h2>
+<div class="svgwrap">
+<svg viewBox="0 0 860 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,Microsoft YaHei,sans-serif">
+  <line x1="80" y1="370" x2="810" y2="370" stroke="#2b333d" stroke-width="1.5"/>
+  <line x1="80" y1="40" x2="80" y2="370" stroke="#2b333d" stroke-width="1.5"/>
+  <text x="780" y="392" fill="#9aa7b4" font-size="12">离市区距离 →</text>
+  <text x="40" y="55" fill="#9aa7b4" font-size="12" transform="rotate(-90 40 55)">徒步强度 →</text>
+  <text x="90" y="60" fill="#66727f" font-size="11">进阶</text>
+  <text x="90" y="360" fill="#66727f" font-size="11">轻松</text>
+  <!-- grid zones -->
+  <rect x="80" y="230" width="365" height="140" fill="#10230f" opacity="0.5"/>
+  <text x="95" y="250" fill="#2c5e37" font-size="11">近 + 轻松（无车友好区）</text>
+
+  <!-- points: x scaled 25km~150 ... 130km~780 -->
+  <g font-size="12.5">
+    <circle cx="200" cy="300" r="8" fill="#3fb950"/><text x="214" y="296" fill="#e6edf3">翠华山</text><text x="214" y="312" fill="#9aa7b4" font-size="11">~30km · 3-5h</text>
+    <circle cx="200" cy="262" r="8" fill="#3fb950"/><text x="214" y="258" fill="#e6edf3">南五台</text><text x="214" y="274" fill="#9aa7b4" font-size="11">~30km · 2-4h</text>
+    <circle cx="232" cy="232" r="8" fill="#3fb950"/><text x="246" y="228" fill="#e6edf3">子午峪小五台</text><text x="246" y="244" fill="#9aa7b4" font-size="11">~35km · 3h · 免费</text>
+    <circle cx="248" cy="345" r="8" fill="#58a6ff"/><text x="262" y="341" fill="#e6edf3">骊山</text><text x="262" y="357" fill="#9aa7b4" font-size="11">~35km · 2h · 地铁直达</text>
+    <circle cx="272" cy="180" r="8" fill="#d29922"/><text x="286" y="176" fill="#e6edf3">嘉午台</text><text x="286" y="192" fill="#9aa7b4" font-size="11">~40km · 4-6h · 野</text>
+    <circle cx="360" cy="205" r="8" fill="#d29922"/><text x="374" y="201" fill="#e6edf3">圭峰山</text><text x="374" y="217" fill="#9aa7b4" font-size="11">~55km · 红叶顶级</text>
+    <circle cx="430" cy="225" r="8" fill="#d29922"/><text x="444" y="221" fill="#e6edf3">太平森林公园</text><text x="444" y="237" fill="#9aa7b4" font-size="11">~65km · 瀑布</text>
+    <circle cx="540" cy="110" r="8" fill="#f85149"/><text x="554" y="106" fill="#e6edf3">冰晶顶 3015m</text><text x="554" y="122" fill="#9aa7b4" font-size="11">~80km · 6-8h</text>
+    <circle cx="640" cy="330" r="8" fill="#bc8cff"/><text x="654" y="326" fill="#e6edf3">华山</text><text x="654" y="342" fill="#9aa7b4" font-size="11">~120km · 高铁30min</text>
+    <circle cx="690" cy="80" r="8" fill="#f85149"/><text x="704" y="76" fill="#e6edf3">太白山 3771m</text><text x="704" y="92" fill="#9aa7b4" font-size="11">~130km · 两天</text>
+  </g>
+</svg>
+<div class="cap">图 2 · 横轴为离市区距离，纵轴为徒步强度。左下绿色区是无车新手最划算的选择</div>
+</div>
+
+<h2 id="backbone">公共交通主干（先记住这三层）</h2>
+<table>
+<tr><th>层级</th><th>工具</th><th>说明</th></tr>
+<tr><td>进城层</td><td><code>地铁5号线</code></td><td>吾悦广场就近上5号线（最近站以高德实时结果为准，通常为阿房宫南/王寺一带），坐到 <b>南稍门</b></td></tr>
+<tr><td>南下层</td><td><code>5号线→2号线</code></td><td>南稍门换乘2号线，坐到终点 <b>韦曲南</b>。此段约40–50分钟</td></tr>
+<tr><td>进山层</td><td><code>335路 / 环山专线 / 拼车</code></td><td>韦曲南是长安区最主要的进山公交集散点，太乙宫、五台、子午方向都从这走</td></tr>
+<tr><td>远途层</td><td><code>高铁</code></td><td>华山：地铁到西安北站，高铁约30分钟到华山北站</td></tr>
+</table>
+<div class="box warn">
+<div class="t">⚠ 关于线路号（务必读）</div>
+<p style="margin:4px 0">西安郊县公交这两年调整频繁（原游9、环山线等都改过名/改号），周末专线还会按季节发车。<b>地铁层（5号线、2号线、韦曲南、西安北—华山北）是稳定的</b>；但「韦曲南出来坐几路、末班几点」请<b>出发当天早上用高德/百度地图 App 输入目的地、选「公共交通」查实时结果</b>，本攻略给的 335 路等是长期主干，仅末班会季调。</p>
+</div>
+
+<h2 id="cuihua">① 翠华山 —— 无车首选</h2>
+<p><span class="tag easy">入门</span><span class="tag pt">地铁+公交成熟</span> 距离约30km · 主峰1414m（景区内天池1100m左右爬升）· 用时3–5小时 · 国家地质公园，天池、冰洞风洞、十八盘、山崩地貌，路线全是修好的台阶/公路，不迷路。</p>
+<h4>去程路线</h4>
+<div class="box route"><div class="t">地铁 + 335路</div>
+<div class="step"><div class="n">1</div><div>吾悦广场就近乘 <b>地铁5号线</b> → <b>南稍门</b> 换 <b>2号线</b> → 终点 <b>韦曲南</b> 下车。</div></div>
+<div class="step"><div class="n">2</div><div>韦曲南地铁口换乘 <b>335路</b>（方向：太乙宫 / 西安翻译学院一带），坐到 <b>太乙宫</b> 附近下车，车程约40–60分钟。</div></div>
+<div class="step"><div class="n">3</div><div>太乙宫距翠华山山门还有约5–7km：景区旺季有接驳；平时拼车/出租约 <b>10–15元</b> 到山门。</div></div>
+<div class="step"><div class="n">4</div><div>全程门到门约 <b>2小时</b>，建议 7:30 前出门。</div></div>
+</div>
+<h4>徒步建议</h4>
+<ul>
+<li>进山门后可坐景区观光车到天池（省体力），再走十八盘—冰洞风洞环线；想拉练就全程徒步上下。</li>
+<li>下山原路返太乙宫，<b>留意335路末班（一般18:00–19:00区间，季调，当天高德查）</b>，错过只能打车回韦曲南（约40–60元，可拼人）。</li>
+<li>门票约65–80元（含/不含观光车分档），以景区当天公示为准。</li>
+</ul>
+
+<h2 id="nanwutai">② 南五台 —— 悬空观景台</h2>
+<p><span class="tag easy">入门</span><span class="tag pt">同335方向</span> 距离约30km · 最高1688m · 用时2–4小时 · 佛教名山，灵应台有悬空玻璃/观景台，出片率高，台阶路为主。</p>
+<div class="box route"><div class="t">路线</div>
+<p style="margin:4px 0">与翠华山同一条走廊：<b>5号线→2号线韦曲南→335路（太乙宫/五台方向）</b>，南五台与翠华山相距不远，下车点不同（南五台在五台古镇一侧）。公交站距景区入口仍有数公里，常规靠拼车 <b>10–15元</b> 上山门。<br>体力一般可买景区交通车上到中天门再爬。两<span class="hl">山同一天只能选一座</span>，别贪心。</p>
+</div>
+
+<h2 id="ziwu">③ 子午峪·小五台 —— 免费野山入门</h2>
+<p><span class="tag easy">入门</span><span class="tag mid">公交最后一段弱</span> 距离约35km · 用时约3小时 · 峪口免费，有「韩国道教祖庭」金仙观，土路缓坡，是西安本地户外入门最经典的野山线。</p>
+<div class="box route"><div class="t">路线（现实版）</div>
+<p style="margin:4px 0">韦曲南出来换往子午大道/抱龙峪方向的区线公交，<b>但车只能到子午镇一带，离峪口还有几公里</b>。三种走法，按省事排序：</p>
+<ol style="margin:4px 0">
+<li><b>韦曲南直接拼车/打车到子午峪口</b>，约20–30元一车，可在地铁口找人拼——最推荐。</li>
+<li>周末坐 <b>环山旅游专线</b>（大雁塔/地铁沿线发车，经子午峪口，仅周末节假日且班次少，当天查高德）。</li>
+<li>报户外团，大巴直接停峪口（见后文）。</li>
+</ol>
+</div>
+<div class="box warn"><div class="t">野山注意</div><p style="margin:4px 0">免费意味着无门票也<b>无安保、无补给</b>。只走成熟主路，不钻未标记岔路；带够1.5L水，下山别晚于16:30。</p></div>
+
+<h2 id="jiawu">④ 嘉午台 —— 小华山，有点挑战</h2>
+<p><span class="tag mid">中等</span><span class="tag pt">拼车/团</span> 距离约40km · 用时4–6小时 · 破山石、岱顶几段贴崖陡梯，野趣和视野都比景区强，<b>恐高者慎选</b>。</p>
+<p>公共交通：韦曲南方向区线公交到嘉午台村附近后仍需步行/拼车数公里，实际体验是「<b>韦曲南拼车 30–40 元/车</b>」或「<b>户外团大巴</b>」。不建议第一次去就纯公交。</p>
+
+<h2 id="gui">⑤ 圭峰山 —— 秋天红叶天花板</h2>
+<p><span class="tag mid">中等</span><span class="tag pt">拼车/团为主</span> 距离约55km（鄠邑方向）· 用时4–5小时 · 每年 <b>10月底—11月初</b> 红叶是西安周边顶级，最佳窗口只有两三周。</p>
+<p>常规公交无法直达峪口，<span class="hl">这是户外团大巴的标准线路</span>；也可韦曲南/鄠邑城区拼车。今年可以提前锁定一个周末。</p>
+
+<h2 id="taiping">⑥ 太平国家森林公园 —— 瀑布群</h2>
+<p><span class="tag mid">中等</span><span class="tag pt">景区班车/团</span> 距离约65km（鄠邑太平峪）· 大小瀑布十几个，修好的步道约8km往返，亲水、夏天避暑最佳。</p>
+<p>公共交通最现实的是：上午在西安西南片区（如城南客运站/水司一带）坐往太平口/煤场村的<b>景区直通车或县际班车</b>（班次随季节，当天查），错过点就只能户外团或拼车。</p>
+
+<h2 id="lishan">⑦ 骊山 —— 纯地铁可达的轻松局</h2>
+<p><span class="tag easy">休闲</span><span class="tag pt">地铁直达</span> 临潼，约35km · 2小时缓坡步道，不算真正登山，适合和华清池、兵马俑安排同一天。</p>
+<div class="box route"><div class="t">路线</div>
+<p style="margin:4px 0">5号线进城 → 换 <b>9号线</b>（在纺织城等枢纽换乘，以高德为准）直达临潼，华清池站附近上山。</p></div>
+
+<h2 id="huashan">⑧ 华山 —— 公共交通最顺的「远门」</h2>
+<p><span class="tag hard">高强度</span><span class="tag pt">高铁30分钟</span> 华阴，约120km · 五岳最险 · 建议一整天或住山顶看日出。无车去华山比去很多秦岭野山还方便。</p>
+<div class="box route"><div class="t">路线</div>
+<div class="step"><div class="n">1</div><div>地铁转到 <b>西安北站</b>（5号线需在城内换2号线/4号线，以高德为准）。</div></div>
+<div class="step"><div class="n">2</div><div>西安北 → <b>华山北</b>，高铁约 <b>30分钟</b>，票约54.5元（二等座），班次密集，建议提前一天在12306买早班（7:00–8:00 出发那几趟）。</div></div>
+<div class="step"><div class="n">3</div><div>华山北站外有 <b>景区免费/低价摆渡车</b> 到游客中心（玉泉院徒步口或西峰/北峰索道站）。</div></div>
+<div class="step"><div class="n">4</div><div>体力路线选「自古华山一条路」夜爬或日爬；省体力选西峰索道上、北峰索道下的环线。</div></div>
+</div>
+<ul>
+<li>门票约160元，索道另计（西峰索道单程约140元，进山车40元，以官方为准，整体花费400–600元）。</li>
+<li>看日出：需住东峰/西峰客栈（多人间约150–300元/床）或夜爬，带厚外套，山顶9月底夜里已接近0℃。</li>
+</ul>
+
+<h2 id="itinerary">参考时间表（翠华山当天往返）</h2>
+<table>
+<tr><th>时间</th><th>安排</th></tr>
+<tr><td>07:00</td><td>吾悦广场出发，就近进5号线</td></tr>
+<tr><td>07:10–08:20</td><td>5号线→南稍门换2号线→韦曲南（约60–70分钟）</td></tr>
+<tr><td>08:25</td><td>韦曲南乘335路往太乙宫（约45–60分钟）</td></tr>
+<tr><td>09:30</td><td>太乙宫拼车/接驳到山门，买票入园</td></tr>
+<tr><td>10:00–14:30</td><td>徒步：天池—十八盘—冰洞风洞环线（含午餐休息）</td></tr>
+<tr><td>14:30–15:30</td><td>下山回太乙宫，补水上厕所</td></tr>
+<tr><td>15:30–17:00</td><td>335路回韦曲南（务必先查当天末班！）</td></tr>
+<tr><td>17:00–18:10</td><td>2号线→5号线回家</td></tr>
+</table>
+<p class="small">华山版本：前一晚住山顶或当天06:30前到西安北站，高铁07:30班次，详见华山章节。</p>
+
+<h2 id="groups">方案B：户外团往返大巴（野山的现实最优解）</h2>
+<p>嘉午台、圭峰山、太平、冰晶顶这类深入峪口的线，西安本地户外团每周六日发团，<b>含往返大巴，AA车费约40–60元/人</b>，通常在地铁口（省体/会展/纬一街等）集合，直接拉到峪口，下山原车返回。</p>
+<ul>
+<li><b>去哪找：</b>小红书/公众号搜「西安徒步 嘉午台/圭峰山 周末」，或「两步路」「嗨king」App 的同城活动。</li>
+<li><b>选团要点：</b>看清是否纯AA无购物、集合点是否在地铁口、有无领队收队、强度几颗星；第一次报「休闲/入门」档。</li>
+<li><b>你的优势：</b>集合点几乎都在2/3号线地铁口，你从5号线进城后顺路即到，比开车找路省心。</li>
+</ul>
+
+<h2 id="gear">装备清单（一日徒步）</h2>
+<div class="grid">
+<div class="card"><h4>必备</h4><p class="kpi">
+· 运动鞋/徒步鞋（防滑底，拒绝板鞋）<br>
+· 水 1.5–2L（山上无补给的野山尤其）<br>
+· 面包/能量棒/牛肉干一顿路餐<br>
+· 充电宝、身份证、少量现金<br>
+· 手机下好离线轨迹（两步路App）
+</p></div>
+<div class="card"><h4>强烈建议</h4><p class="kpi">
+· 20–30L 小背包<br>
+· 薄冲锋衣/外套（梁上起风骤降10℃）<br>
+· 防晒：帽子+防晒霜（9月紫外线仍强）<br>
+· 登山杖（下山护膝，10元伸缩款即可）<br>
+· 创可贴、护膝
+</p></div>
+<div class="card"><h4>进阶线加项</h4><p class="kpi">
+· 头灯（夜爬/防走晚必备）<br>
+· 冲锋衣裤（冰晶顶、太白山）<br>
+· 防滑手套（华山铁链、嘉午台陡梯）<br>
+· 保温杯热水、功能饮料
+</p></div>
+</div>
+
+<h2 id="safe">安全与季节</h2>
+<ul>
+<li><b>当下（9月中）正是秦岭黄金季</b>：雨季尾声、暑气消退、能见度高；9月底高海拔（冰晶顶/太白山）夜间接近0℃，需冬装思路。</li>
+<li><b>10月底–11月初</b>：圭峰山、沣峪沿线红叶最佳；再往后浅山也能走到11月中。</li>
+<li>秦岭天气说变就变，出门前看「长安区/鄠邑」逐小时天气而不是西安城区；<b>有雨坚决不上野山</b>（山洪、滑坡、石阶湿滑）。</li>
+<li>野山结伴而行，至少3人，把路线和预计下山时间发给家人；不抄未标记近路，秦岭每年都有迷路救援。</li>
+<li>景区线（翠华山、南五台、太平、华山）适合独行；野山（子午峪深处、嘉午台、冰晶顶）新手不要单穿。</li>
+</ul>
+
+<h2 id="decide">一分钟选山决策树</h2>
+<div class="svgwrap">
+<svg viewBox="0 0 860 430" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,Microsoft YaHei,sans-serif">
+  <rect x="330" y="14" width="200" height="46" rx="9" fill="#1c232d" stroke="#39c5cf"/>
+  <text x="430" y="43" fill="#39c5cf" font-size="13.5" text-anchor="middle">今天想走哪种？</text>
+
+  <line x1="380" y1="60" x2="180" y2="96" stroke="#2b333d"/>
+  <line x1="430" y1="60" x2="430" y2="96" stroke="#2b333d"/>
+  <line x1="480" y1="60" x2="690" y2="96" stroke="#2b333d"/>
+
+  <rect x="70" y="98" width="220" height="44" rx="8" fill="#10230f" stroke="#2c5e37"/>
+  <text x="180" y="125" fill="#3fb950" font-size="12.5" text-anchor="middle">省心，全程公交</text>
+  <rect x="320" y="98" width="220" height="44" rx="8" fill="#241b0a" stroke="#4d3a12"/>
+  <text x="430" y="125" fill="#d29922" font-size="12.5" text-anchor="middle">野趣，愿拼车/跟团</text>
+  <rect x="580" y="98" width="220" height="44" rx="8" fill="#18133a" stroke="#4a3a8c"/>
+  <text x="690" y="125" fill="#bc8cff" font-size="12.5" text-anchor="middle">出远门，一整天以上</text>
+
+  <line x1="180" y1="142" x2="180" y2="172" stroke="#2b333d"/>
+  <rect x="60" y="174" width="240" height="70" rx="8" fill="#1c232d" stroke="#2b333d"/>
+  <text x="180" y="200" fill="#e6edf3" font-size="12.5" text-anchor="middle">带家人/体力一般 →</text>
+  <text x="180" y="222" fill="#3fb950" font-size="13" text-anchor="middle" font-weight="700">翠华山 或 南五台</text>
+
+  <rect x="60" y="262" width="240" height="62" rx="8" fill="#1c232d" stroke="#2b333d"/>
+  <text x="180" y="288" fill="#e6edf3" font-size="12.5" text-anchor="middle">只想随便走走 →</text>
+  <text x="180" y="309" fill="#58a6ff" font-size="13" text-anchor="middle" font-weight="700">骊山（地铁直达）</text>
+  <line x1="180" y1="244" x2="180" y2="262" stroke="#2b333d"/>
+
+  <line x1="430" y1="142" x2="430" y2="172" stroke="#2b333d"/>
+  <rect x="310" y="174" width="240" height="62" rx="8" fill="#1c232d" stroke="#2b333d"/>
+  <text x="430" y="200" fill="#e6edf3" font-size="12.5" text-anchor="middle">9月想挑战 →</text>
+  <text x="430" y="221" fill="#d29922" font-size="13" text-anchor="middle" font-weight="700">嘉午台（拼车/团）</text>
+
+  <rect x="310" y="262" width="240" height="62" rx="8" fill="#1c232d" stroke="#2b333d"/>
+  <text x="430" y="288" fill="#e6edf3" font-size="12.5" text-anchor="middle">10月底红叶 →</text>
+  <text x="430" y="309" fill="#d29922" font-size="13" text-anchor="middle" font-weight="700">圭峰山（户外团）</text>
+  <line x1="430" y1="236" x2="430" y2="262" stroke="#2b333d"/>
+
+  <line x1="690" y1="142" x2="690" y2="172" stroke="#2b333d"/>
+  <rect x="570" y="174" width="240" height="62" rx="8" fill="#1c232d" stroke="#2b333d"/>
+  <text x="690" y="200" fill="#e6edf3" font-size="12.5" text-anchor="middle">当天来回 →</text>
+  <text x="690" y="221" fill="#bc8cff" font-size="13" text-anchor="middle" font-weight="700">华山（高铁30min）</text>
+
+  <rect x="570" y="262" width="240" height="62" rx="8" fill="#2a1210" stroke="#55201e"/>
+  <text x="690" y="288" fill="#e6edf3" font-size="12.5" text-anchor="middle">有装备、两天 →</text>
+  <text x="690" y="309" fill="#f85149" font-size="13" text-anchor="middle" font-weight="700">太白山 3771m</text>
+  <line x1="690" y1="236" x2="690" y2="262" stroke="#2b333d"/>
+
+  <text x="430" y="380" fill="#9aa7b4" font-size="12.5" text-anchor="middle">新手默认答案：本周翠华山 · 10月底圭峰山 · 想出远门选华山</text>
+</svg>
+<div class="cap">图 3 · 选山决策树</div>
+</div>
+
+<h2 id="checklist">行前清单（出发前一晚勾选）</h2>
+<div class="box">
+<div class="t" style="color:var(--teal)">本周六 · 翠华山当日往返</div>
+<div class="grid">
+<div class="card"><h4>前一晚</h4>
+<label class="ck"><input type="checkbox"> 高德查实时公交+335末班时刻</label><br>
+<label class="ck"><input type="checkbox"> 看长安区逐小时天气（有雨取消）</label><br>
+<label class="ck"><input type="checkbox"> 充电宝充满电</label><br>
+<label class="ck"><input type="checkbox"> 两步路App下载翠华山离线轨迹</label><br>
+<label class="ck"><input type="checkbox"> 路餐+1.5L水备好</label><br>
+<label class="ck"><input type="checkbox"> 背包收拾好放门口</label>
+</div>
+<div class="card"><h4>出门必带</h4>
+<label class="ck"><input type="checkbox"> 身份证</label><br>
+<label class="ck"><input type="checkbox"> 手机+充电宝+数据线</label><br>
+<label class="ck"><input type="checkbox"> 水、路餐、少量现金</label><br>
+<label class="ck"><input type="checkbox"> 薄冲锋衣/外套</label><br>
+<label class="ck"><input type="checkbox"> 帽子/防晒霜</label><br>
+<label class="ck"><input type="checkbox"> 登山杖、创可贴</label>
+</div>
+<div class="card"><h4>时间锚点</h4>
+<p class="kpi">
+□ 07:00 出门上5号线<br>
+□ 08:25 韦曲南上335<br>
+□ 09:30 到山门<br>
+□ 14:30 开始下山<br>
+□ 15:30 太乙宫返程<br>
+<b style="color:var(--amber)">红线：错过末班335改拼车，不搭黑车夜路
+</b></p>
+</div>
+</div>
+<p class="small">勾选状态只保存在当前浏览器（localStorage），刷新不丢。</p>
+</div>
+
+<hr>
+<p class="small">说明：本攻略地铁/高铁主干（5号线、2号线、韦曲南、335路、西安北—华山北高铁）为长期稳定线路；郊县接驳公交的线路号、末班车时刻随季节调整，出发当天请以高德地图/百度地图 App 实时公共交通结果和景区官方公告为准。门票与索道价格为常见区间，以现场公示为准。<br>
+生成时间：2026年9月 · 出发地：西安·西咸吾悦广场</p>
+
+</main>
+</div>
+<script>
+(function(){
+  var KEY='xian-hike-checklist-v1';
+  var boxes=[].slice.call(document.querySelectorAll('#checklist input[type=checkbox]'));
+  function save(){localStorage.setItem(KEY, boxes.map(function(b){return b.checked?1:0;}).join(''));}
+  function load(){
+    var s=localStorage.getItem(KEY)||'';
+    boxes.forEach(function(b,i){b.checked=s[i]==='1';});
+  }
+  boxes.forEach(function(b){b.addEventListener('change',save);});
+  load();
+})();
+</script>
+</body>
+</html>
